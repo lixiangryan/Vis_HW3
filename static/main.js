@@ -118,14 +118,15 @@ d3.json("/get_van_gogh_data")
         popup.style("display", "block");
         d3.select("#popup-image").attr("src", d.image_url);
 
+        // 以更通用的方式提取檔案名稱
         const fileName = d.image_url
-          .split("van-gogh-paintings/")[1]
           .split("/")
           .pop()
-          .replace(".jpg", "");
+          .split(".")[0]; // 獲取不含副檔名的檔案名稱
 
         d3.select("#popup-info").html(`
-          <li>Names: ${fileName}</li>
+          <li>Name: ${fileName}</li>
+          <li>Author: ${d.author}</li>
           <li>Class: ${d.class_name}</li>
           <li>Labels: ${d.labels}</li>
         `);
