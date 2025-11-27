@@ -1,8 +1,11 @@
 import sys
 import os
+import json
 import pandas as pd
 import numpy as np
 from sklearn.manifold import TSNE
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler # 新增 StandardScaler 導入
 
 # 將父目錄添加到系統路徑，以允許從 'utils' 目錄導入模組
 # 這允許腳本找到 'utils' 資料夾中的模組
@@ -17,10 +20,12 @@ from utils.feature_extractor import get_device, load_model, extract_features
 INPUT_DATA_DIR = "data"
 # 設定新的輸出檔案名稱
 OUTPUT_CSV_PATH = os.path.join("static", "multiAuthor_features.csv")
+OUTPUT_VECTORS_PATH = os.path.join("static", "multiAuthor_vectors.json")
 
 # 我們可以保留這個設定，以便在每位作者的作品內部進行取樣
 SAMPLES_PER_LABEL = 28
 RANDOM_STATE = 42
+N_CLUSTERS = 8 # K-Means 的分群數量，可調整
 
 def reduce_dimensions(features, random_state):
     """
@@ -107,14 +112,53 @@ def main():
     # 將特徵加入 DataFrame
     sampled_df["feature_vector"] = feature_vectors
 
-    # 步驟 3：維度降低
-    embedded_coords = reduce_dimensions(feature_vectors, random_state=RANDOM_STATE)
+    # 步驟 3：無監督分群 (K-Means)
+    
+    # --- 偵錯開始 ---
+    print("\n--- K-MEANS DEBUGGING START ---")
+    raw_vectors_array = np.array(sampled_df["feature_vector"].tolist())
+    print(f"DEBUG: Raw vectors shape: {raw_vectors_array.shape}")
+    if len(raw_vectors_array) > 0:
+        print(f"DEBUG: Raw vector (first item) mean: {np.mean(raw_vectors_array[0]):.4f}, std: {np.std(raw_vectors_array[0]):.4f}")
+    
+    print("Standardizing features for K-Means...")
+    scaler = StandardScaler()
+    scaled_vectors = scaler.fit_transform(raw_vectors_array)
+    print("Standardization complete.")
+    
+    if len(scaled_vectors) > 0:
+        print(f"DEBUG: Scaled vector (first item) mean: {np.mean(scaled_vectors[0]):.4f}, std: {np.std(scaled_vectors[0]):.4f}")
+
+    print(f"Performing K-Means clustering with {N_CLUSTERS} clusters...")
+    kmeans = KMeans(n_clusters=N_CLUSTERS, random_state=RANDOM_STATE, n_init='auto')
+    cluster_labels = kmeans.fit_predict(scaled_vectors) # 使用標準化後的向量
+    
+    unique_labels, counts = np.unique(cluster_labels, return_counts=True)
+    print(f"DEBUG: Unique cluster labels found: {unique_labels}")
+    print(f"DEBUG: Counts per cluster: {dict(zip(unique_labels, counts))}")
+    print("--- K-MEANS DEBUGGING END ---\n")
+    # --- 偵錯結束 ---
+
+    sampled_df['cluster_id'] = cluster_labels
+    print("K-Means clustering complete.")
+
+    # 步驟 4：維度降低
+    embedded_coords = reduce_dimensions(sampled_df["feature_vector"].tolist(), random_state=RANDOM_STATE)
     
     # 將座標加入 DataFrame
     sampled_df['x'] = embedded_coords[:, 0]
     sampled_df['y'] = embedded_coords[:, 1]
 
-    # 步驟 4：儲存最終輸出
+    # 步驟 5：儲存最終輸出
+    
+    # 5a. 儲存特徵向量以供相似度分析使用
+    print(f"Saving feature vectors to {OUTPUT_VECTORS_PATH}...")
+    vectors_dict = {row['image_path']: row['feature_vector'].tolist() for index, row in sampled_df.iterrows()}
+    with open(OUTPUT_VECTORS_PATH, 'w') as f:
+        json.dump(vectors_dict, f)
+    print("Feature vectors saved.")
+
+    # 5b. 儲存用於視覺化的主要 CSV 檔案 (不含向量)
     final_df = sampled_df.drop(columns=['feature_vector'])
     final_df.to_csv(OUTPUT_CSV_PATH, index=False)
     

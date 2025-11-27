@@ -47,23 +47,69 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
+        #similarity-results-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            height: 80px; /* 設定一個固定高度 */
+        }
+
+        #similarity-results-container img {
+            height: 100%;
+            width: auto;
+            border: 2px solid gold; /* 為圖片加上邊框 */
+            border-radius: 4px;
+        }
+
+        #stats-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 
 <body>
     <svg id="main-svg"></svg>
     <svg id="minimap"></svg>
+    <div id="stats-container"></div>
     
     <div id="controls-container" style="position: absolute; top: 20px; right: 20px; background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-size: 14px;">
+        <div id="color-scheme-container" style="padding-bottom: 10px; border-bottom: 1px solid #ddd;">
+            <label for="color-scheme-select">著色依據：</label>
+            <select id="color-scheme-select">
+                <option value="author" selected>作者</option>
+                <option value="cluster_id">分群結果</option>
+            </select>
+        </div>
+        <div id="stats-toggle-container" style="margin-top: 10px;">
+            <input type="checkbox" id="toggle-stats" checked>
+            <label for="toggle-stats">顯示統計圖表</label>
+        </div>
         <div id="centroid-toggle-container">
             <input type="checkbox" id="toggle-centroids" checked>
             <label for="toggle-centroids">顯示群組中心</label>
         </div>
-        <div id="search-container">
+        <div id="search-container" style="margin-top: 10px;">
             <input type="text" id="search-box" placeholder="依作者或檔名搜尋...">
         </div>
         <div id="legend-container"></div>
     </div>
+
+    <!-- 相似圖片結果容器 -->
+    <div id="similarity-results-container"></div>
 
     <!-- 彈出視窗 -->
     <div id="popup"

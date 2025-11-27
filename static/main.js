@@ -4,323 +4,219 @@ const minimapSvg = d3.select("#minimap");
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-// 從後端載入資料
 d3.json("/get_van_gogh_data")
   .then((data) => {
-    // 計算 x 和 y 的範圍
+    // ===================================
+    // 1. 全域變數與初始設定
+    // ===================================
+    let colorMode = 'author'; // 'author' 或 'cluster_id'
+
     const xExtent = d3.extent(data, (d) => d.x);
     const yExtent = d3.extent(data, (d) => d.y);
-
-    // 主畫布的縮放比例
-    const xScale = d3
-      .scaleLinear()
-      .domain(xExtent)
-      .range([50, width - 50]);
-    const yScale = d3
-      .scaleLinear()
-      .domain(yExtent)
-      .range([50, height - 50]);
-
-    // 定義縮放行為
+    const xScale = d3.scaleLinear().domain(xExtent).range([50, width - 50]);
+    const yScale = d3.scaleLinear().domain(yExtent).range([50, height - 50]);
     const zoom = d3.zoom().scaleExtent([0.5, 10]).on("zoom", zoomed);
-
     mainSvg.call(zoom);
-
-    // 主畫布的容器
     const g = mainSvg.append("g");
 
-    // 根據 class_name 分配顏色
-    const uniqueClassNames = [...new Set(data.map((d) => d.class_name))]; // 提取所有獨特的 class_name
-    const colorScale = d3
-      .scaleOrdinal()
-      .domain(uniqueClassNames)
-      .range(d3.schemeSet3); // 使用 D3 的預設顏色方案
+    // -------------------
+    // 主畫布上的圖片點
+    // -------------------
+    const imageGroup = g.selectAll("g.image-group").data(data).enter().append("g").attr("class", "image-group");
+    imageGroup.append("rect")
+        .attr("x", d => { d.x0 = xScale(d.x) - 15; return d.x0; })
+        .attr("y", d => { d.y0 = yScale(d.y) - 15; return d.y0; })
+        .attr("width", 30).attr("height", 30)
+        .attr("rx", 2).attr("ry", 2);
+    imageGroup.append("image")
+        .attr("xlink:href", d => d.image_url)
+        .attr("x", d => d.x0).attr("y", d => d.y0)
+        .attr("width", 30).attr("height", 30)
+        .on("mouseover", function(event, d) {
+            d3.select(this.parentNode).raise();
+            d3.select(this).transition().duration(200).attr("x", d.x0 - 5).attr("y", d.y0 - 5).attr("width", 40).attr("height", 40);
+            d3.select(this.previousSibling).transition().duration(200).attr("x", d.x0 - 10).attr("y", d.y0 - 10).attr("width", 50).attr("height", 50);
+        })
+        .on("mouseout", function(event, d) {
+            d3.select(this).transition().duration(200).attr("x", d.x0).attr("y", d.y0).attr("width", 30).attr("height", 30);
+            d3.select(this.previousSibling).transition().duration(200).attr("x", d.x0).attr("y", d.y0).attr("width", 30).attr("height", 30);
+        })
+        .on("click", function(event, d) {
+            // 顯示主彈出視窗
+            d3.select("#popup").style("display", "block");
+            d3.select("#popup-image").attr("src", d.image_url);
+            const fileName = d.image_url.split("/").pop().split(".")[0];
+            d3.select("#popup-info").html(`<li>Name: ${fileName}</li><li>Author: ${d.author}</li><li>Cluster ID: ${d.cluster_id}</li>`);
+            event.stopPropagation();
+            // 在左下角容器顯示相似圖片
+            fetch(`/get_similar_images?path=${encodeURIComponent(d.image_path)}`)
+                .then(response => response.json())
+                .then(similarPaths => {
+                    const neighborsData = similarPaths.slice(1).map(path => data.find(item => item.image_path === path)).filter(item => item);
+                    d3.select("#similarity-results-container").html("").selectAll("img").data(neighborsData).join("img").attr("src", d => d.image_url);
+                })
+                .catch(error => console.error("Error fetching similar images:", error));
+        });
 
-    const imageGroup = g
-      .selectAll("g.image-group")
-      .data(data)
-      .enter()
-      .append("g")
-      .attr("class", "image-group");
+    // -------------------
+    // 小地圖
+    // -------------------
+    const minimapScale = 0.2, minimapWidth = 200, minimapHeight = 150;
+    const minimapXScale = d3.scaleLinear().domain(xExtent).range([0, minimapWidth]);
+    const minimapYScale = d3.scaleLinear().domain(yExtent).range([0, minimapHeight]);
+    const minimapPoints = minimapSvg.selectAll("circle").data(data).enter().append("circle")
+        .attr("cx", d => minimapXScale(d.x)).attr("cy", d => minimapYScale(d.y)).attr("r", 2);
+    const viewRect = minimapSvg.append("rect").attr("fill", "none").attr("stroke", "red").attr("stroke-width", 1);
 
-    // 加邊框用 rect
-    imageGroup
-      .append("rect")
-      .attr("x", (d) => {
-        d.x0 = xScale(d.x) - 15;
-        return d.x0;
-      })
-      .attr("y", (d) => {
-        d.y0 = yScale(d.y) - 15;
-        return d.y0;
-      })
-      .attr("width", (d) => {
-        d.w0 = 30;
-        return d.w0;
-      })
-      .attr("height", (d) => {
-        d.h0 = 30;
-        return d.h0;
-      })
-      .attr("stroke", (d) => colorScale(d.class_name))
-      .attr("stroke-width", 1.5)
-      .attr("fill", (d) => colorScale(d.class_name))
-      .attr("fill-opacity", 0.6)
-      .attr("rx", 2)
-      .attr("ry", 2);
 
-    // 疊上圖片
-    imageGroup
-      .append("image")
-      .attr("xlink:href", (d) => d.image_url)
-      .attr("x", (d) => d.x0)
-      .attr("y", (d) => d.y0)
-      .attr("width", (d) => d.w0)
-      .attr("height", (d) => d.h0)
-      .on("mouseover", function (event, d) {
-        d3.select(this.parentNode).raise(); // 讓整組往上
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr("x", d.x0 - 5)
-          .attr("y", d.y0 - 5)
-          .attr("width", d.w0 + 10)
-          .attr("height", d.h0 + 10);
-        d3.select(this.previousSibling)
-          .transition()
-          .duration(200)
-          .attr("x", d.x0 - 10)
-          .attr("y", d.y0 - 10)
-          .attr("width", d.w0 + 20)
-          .attr("height", d.h0 + 20);
-      })
-      .on("mouseout", function (event, d) {
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr("x", d.x0)
-          .attr("y", d.y0)
-          .attr("width", d.w0)
-          .attr("height", d.h0);
-        d3.select(this.previousSibling)
-          .transition()
-          .duration(200)
-          .attr("x", d.x0)
-          .attr("y", d.y0)
-          .attr("width", d.w0)
-          .attr("height", d.h0);
-      })
-      .on("click", function (event, d) {
-        const popup = d3.select("#popup");
-        const color = colorScale(d.class_name);
+    // ===================================
+    // 2. 核心更新函式
+    // ===================================
+    function updateVisualization() {
+        const colorKey = colorMode; // 'author' 或 'cluster_id'
+        
+        // 2a. 更新顏色比例尺
+        const uniqueValues = [...new Set(data.map(d => d[colorKey]))].sort((a, b) => a - b); // 加入數字排序
+        
+        // --- DEBUG ---
+        console.log("--- UPDATE VISUALIZATION ---");
+        console.log("Coloring by:", colorKey);
+        console.log("Unique values for coloring:", uniqueValues);
+        // --- END DEBUG ---
 
-        popup.style("background-color", color);
-        popup.style("display", "block");
-        d3.select("#popup-image").attr("src", d.image_url);
+        const colorScale = d3.scaleOrdinal().domain(uniqueValues).range(d3.schemeSet3);
 
-        // 以更通用的方式提取檔案名稱
-        const fileName = d.image_url
-          .split("/")
-          .pop()
-          .split(".")[0]; // 獲取不含副檔名的檔案名稱
+        // 2b. 更新主畫布點的顏色
+        imageGroup.selectAll("rect")
+            .transition().duration(500)
+            .attr("stroke", d => colorScale(d[colorKey]))
+            .attr("fill", d => colorScale(d[colorKey]));
 
-        d3.select("#popup-info").html(`
-          <li>Name: ${fileName}</li>
-          <li>Author: ${d.author}</li>
-          <li>Class: ${d.class_name}</li>
-          <li>Labels: ${d.labels}</li>
-        `);
-        event.stopPropagation();
-      });
+        // 2c. 更新小地圖點的顏色
+        minimapPoints.transition().duration(500)
+            .attr("fill", d => colorScale(d[colorKey]));
 
-    // --- 計算並繪製群組中心點 ---
+        // 2d. 更新與重繪中心點
+        g.selectAll("g.centroid-group").remove(); // 清除舊的中心點
+        const groupedData = d3.group(data, d => d[colorKey]);
+        const centroidData = Array.from(groupedData, ([key, values]) => ({ key: key, x: d3.mean(values, d => d.x), y: d3.mean(values, d => d.y) }));
+        const centroidGroup = g.selectAll("g.centroid-group").data(centroidData).enter().append("g").attr("class", "centroid-group");
+        centroidGroup.append("circle")
+            .attr("cx", d => xScale(d.x)).attr("cy", d => yScale(d.y))
+            .attr("r", 30).style("fill-opacity", 0.2).style("stroke-width", 2)
+            .style("fill", d => colorScale(d.key)).style("stroke", d => colorScale(d.key));
+        centroidGroup.append("text")
+            .attr("x", d => xScale(d.x)).attr("y", d => yScale(d.y))
+            .attr("text-anchor", "middle").attr("dy", ".35em").text(d => d.key)
+            .style("font-size", "12px").style("font-weight", "bold").style("fill", "#333").style("pointer-events", "none");
+
+        // 2e. 更新與重繪圖例
+        const legendContainer = d3.select("#legend-container");
+        legendContainer.html(""); // 清除舊圖例
+        const legendItems = legendContainer.selectAll(".legend-item").data(uniqueValues).enter().append("div").attr("class", "legend-item");
+        legendItems.append("input").attr("type", "checkbox").attr("id", d => `checkbox-${d}`).attr("value", d => d).property("checked", true).on("change", filterPoints);
+        legendItems.append("span").attr("class", "legend-color-box").style("background-color", d => colorScale(d));
+        legendItems.append("label").attr("for", d => `checkbox-${d}`).text(d => d);
+
+        // 2f. 更新與重繪統計圖表
+        const statsContainer = d3.select("#stats-container");
+        statsContainer.html(""); // 清除舊圖表
+        const counts = Array.from(d3.rollup(data, v => v.length, d => d[colorKey]), ([key, count]) => ({ key, count })).sort((a, b) => d3.descending(a.count, b.count));
+        const statsMargin = { top: 30, right: 20, bottom: 100, left: 40 }, statsWidth = 300 - statsMargin.left - statsMargin.right, statsHeight = 250 - statsMargin.top - statsMargin.bottom;
+        const statsSvg = statsContainer.append("svg").attr("width", statsWidth + statsMargin.left + statsMargin.right).attr("height", statsHeight + statsMargin.top + statsMargin.bottom).append("g").attr("transform", `translate(${statsMargin.left},${statsMargin.top})`);
+        const xStatsScale = d3.scaleBand().domain(counts.map(d => d.key)).range([0, statsWidth]).padding(0.1);
+        const yStatsScale = d3.scaleLinear().domain([0, d3.max(counts, d => d.count) * 1.1]).range([statsHeight, 0]);
+        statsSvg.selectAll(".bar").data(counts).enter().append("rect").attr("class", "bar").attr("x", d => xStatsScale(d.key)).attr("y", d => yStatsScale(d.count))
+          .attr("width", xStatsScale.bandwidth()).attr("height", d => statsHeight - yStatsScale(d.count))
+          .attr("fill", d => colorScale(d.key)).style("cursor", "pointer")
+          .on("click", (event, d) => {
+              legendContainer.selectAll("input[type=checkbox]").property("checked", legend_d => legend_d === d.key);
+              filterPoints();
+          });
+        statsSvg.append("g").attr("transform", `translate(0,${statsHeight})`).call(d3.axisBottom(xStatsScale)).selectAll("text").attr("transform", "rotate(-45)").style("text-anchor", "end");
+        statsSvg.append("g").call(d3.axisLeft(yStatsScale).ticks(5))
+            .append("text")
+            .attr("fill", "#000")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -statsMargin.left + 5) // 調整位置
+            .attr("x", -statsHeight / 2)
+            .attr("dy", "1em") // 垂直位移
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .text("作品數量");
+        statsSvg.append("text").attr("x", statsWidth / 2).attr("y", 0 - (statsMargin.top / 2)).attr("text-anchor", "middle").style("font-size", "16px").style("font-weight", "bold").text(colorMode === 'author' ? '各作者作品數量' : '各分群作品數量');
+
+        // 觸發一次篩選，確保初始狀態正確
+        filterPoints();
+    }
+
+    // ===================================
+    // 3. 事件監聽與輔助函式
+    // ===================================
     
-    // 1. 按作者分組並計算中心點
-    const groupedData = d3.group(data, d => d.author);
-    const centroidData = Array.from(groupedData, ([author, values]) => ({
-      author: author,
-      x: d3.mean(values, d => d.x),
-      y: d3.mean(values, d => d.y)
-    }));
-
-    // 2. 繪製中心點
-    const centroidGroup = g.selectAll("g.centroid-group")
-      .data(centroidData)
-      .enter()
-      .append("g")
-      .attr("class", "centroid-group");
-
-    // 中心點的背景圓
-    centroidGroup.append("circle")
-      .attr("cx", d => xScale(d.x))
-      .attr("cy", d => yScale(d.y))
-      .attr("r", 30) // 中心點圓圈半徑
-      .style("fill", d => colorScale(d.author))
-      .style("fill-opacity", 0.2)
-      .style("stroke", d => colorScale(d.author))
-      .style("stroke-width", 2);
-
-    // 中心點的作者文字
-    centroidGroup.append("text")
-      .attr("x", d => xScale(d.x))
-      .attr("y", d => yScale(d.y))
-      .attr("text-anchor", "middle")
-      .attr("dy", ".35em") // 垂直居中
-      .text(d => d.author)
-      .style("font-size", "12px")
-      .style("font-weight", "bold")
-      .style("fill", "#333")
-      .style("pointer-events", "none"); // 讓文字不影響滑鼠事件
-
-
-    // --- 互動式篩選圖例 ---
-
-    // 取得所有作者 (與 class_name 相同)
-    const allAuthors = [...new Set(data.map(d => d.author))].sort();
-
-    // 選擇 HTML 容器
-    const legendContainer = d3.select("#legend-container");
-
-    // 為每位作者建立一個圖例項目
-    const legendItems = legendContainer.selectAll(".legend-item")
-      .data(allAuthors)
-      .enter()
-      .append("div")
-      .attr("class", "legend-item");
-
-    // 加入複選框
-    legendItems.append("input")
-      .attr("type", "checkbox")
-      .attr("id", d => `checkbox-${d}`)
-      .attr("value", d => d)
-      .property("checked", true) // 預設全選
-      .on("change", filterPoints); // 綁定事件
-
-    // 加入顏色方塊
-    legendItems.append("span")
-      .attr("class", "legend-color-box")
-      .style("background-color", d => colorScale(d));
-
-    // 加入作者名稱標籤
-    legendItems.append("label")
-      .attr("for", d => `checkbox-${d}`)
-      .text(d => d);
-
     // --- 控制項事件監聽 ---
-    
-    // 中心點顯示切換
+    // 改用原生 JS 來附加事件，以繞過 D3 可能的 bug
+    document.getElementById("color-scheme-select").addEventListener("change", function() {
+        console.log("--- DROPDOWN CHANGED (Native JS) ---");
+        colorMode = this.value;
+        updateVisualization();
+    });
+    d3.select("#toggle-stats").on("change", function() { d3.select("#stats-container").style("display", d3.select(this).property("checked") ? "block" : "none"); });
     d3.select("#toggle-centroids").on("change", filterPoints);
+    d3.select("#search-box").on("input", function() {
+        const searchTerm = this.value.toLowerCase();
+        const colorKey = colorMode;
+
+        // 搜尋只應影響圖片，不應影響中心點
+        g.selectAll(".image-group").transition().duration(200).style("opacity", d => {
+            if (searchTerm === "") return 1.0;
+            const keyMatch = String(d[colorKey]).toLowerCase().includes(searchTerm);
+            const imageMatch = d.image_url.toLowerCase().includes(searchTerm);
+            return keyMatch || imageMatch ? 1.0 : 0.1;
+        });
+
+        minimapSvg.selectAll("circle").transition().duration(200).style("opacity", d => {
+            if (searchTerm === "") return 1.0;
+            const keyMatch = String(d[colorKey]).toLowerCase().includes(searchTerm);
+            const imageMatch = d.image_url.toLowerCase().includes(searchTerm);
+            return keyMatch || imageMatch ? 1.0 : 0.1;
+        });
+    });
 
     function filterPoints() {
-      // 取得所有被選中的作者
-      const checkedAuthors = [];
-      legendContainer.selectAll("input[type=checkbox]").each(function(d) {
-        if (d3.select(this).property("checked")) {
-          checkedAuthors.push(d);
-        }
-      });
+        const legendContainer = d3.select("#legend-container");
+        const checkedValues = [];
+        legendContainer.selectAll("input[type=checkbox]:checked").each(function(d) { checkedValues.push(d); });
+        const areCentroidsVisible = d3.select("#toggle-centroids").property("checked");
+        const colorKey = colorMode;
 
-      // 檢查中心點的顯示開關是否開啟
-      const areCentroidsVisible = d3.select("#toggle-centroids").property("checked");
-
-      // 根據選中的作者，更新主畫布上的圖片可見性
-      g.selectAll(".image-group")
-        .style("display", d => checkedAuthors.includes(d.author) ? "block" : "none");
-      
-      // 更新中心點的可見性 (需要同時考慮作者篩選和總開關)
-      g.selectAll(".centroid-group")
-        .style("display", d => (checkedAuthors.includes(d.author) && areCentroidsVisible) ? "block" : "none");
-
-      // 同時更新小地圖上的點的可見性
-      minimapSvg.selectAll("circle")
-        .style("display", d => checkedAuthors.includes(d.author) ? "inline" : "none");
+        g.selectAll(".image-group").style("display", d => checkedValues.includes(d[colorKey]) ? "block" : "none");
+        g.selectAll(".centroid-group").style("display", d => (checkedValues.includes(d.key) && areCentroidsVisible) ? "block" : "none");
+        minimapSvg.selectAll("circle").style("display", d => checkedValues.includes(d[colorKey]) ? "inline" : "none");
     }
 
-
-    // --- 搜尋功能 ---
-    d3.select("#search-box").on("input", function() {
-      const searchTerm = this.value.toLowerCase();
-
-      // 過渡效果，使不符合的項目變暗
-      g.selectAll(".image-group").each(function(d) {
-        const isMatch = d.author.toLowerCase().includes(searchTerm) || 
-                        d.image_url.toLowerCase().includes(searchTerm);
-        
-        d3.select(this)
-          .transition().duration(200)
-          .style("opacity", isMatch || searchTerm === "" ? 1.0 : 0.1);
-      });
-
-      minimapSvg.selectAll("circle").each(function(d) {
-        const isMatch = d.author.toLowerCase().includes(searchTerm) || 
-                        d.image_url.toLowerCase().includes(searchTerm);
-
-        d3.select(this)
-          .transition().duration(200)
-          .style("opacity", isMatch || searchTerm === "" ? 1.0 : 0.1);
-      });
-    });
-
-
-    // 小地圖的縮放比例
-    const minimapScale = 0.2;
-    const minimapWidth = 200;
-    const minimapHeight = 150;
-
-    const minimapXScale = d3
-      .scaleLinear()
-      .domain(xExtent)
-      .range([0, minimapWidth]);
-    const minimapYScale = d3
-      .scaleLinear()
-      .domain(yExtent)
-      .range([0, minimapHeight]);
-
-    // 繪製小地圖的點
-    minimapSvg
-      .selectAll("circle")
-      .data(data)
-      .enter()
-      .append("circle")
-      .attr("cx", (d) => minimapXScale(d.x))
-      .attr("cy", (d) => minimapYScale(d.y))
-      .attr("r", 2)
-      .attr("fill", (d) => colorScale(d.class_name));
-
-    // 小地圖的視圖框
-    const viewRect = minimapSvg
-      .append("rect")
-      .attr("fill", "none")
-      .attr("stroke", "red")
-      .attr("stroke-width", 1);
-
-    // 縮放與平移事件
     function zoomed(event) {
-      const transform = event.transform;
-      g.attr("transform", transform);
-
-      // 更新小地圖視圖框
-      const k = transform.k;
-      const tx = transform.x;
-      const ty = transform.y;
-      viewRect
-        .attr("x", (-tx / k) * minimapScale)
-        .attr("y", (-ty / k) * minimapScale)
-        .attr("width", (width / k) * minimapScale)
-        .attr("height", (height / k) * minimapScale);
+        g.attr("transform", event.transform);
+        const {k, x, y} = event.transform;
+        viewRect.attr("x", (-x / k) * minimapScale).attr("y", (-y / k) * minimapScale)
+            .attr("width", (width / k) * minimapScale).attr("height", (height / k) * minimapScale);
     }
 
-    // 關閉彈出視窗
-    d3.select("#close-popup").on("click", function (event) {
-      d3.select("#popup").style("display", "none");
-      event.stopPropagation();
+    d3.select("#close-popup").on("click", function(event) {
+        d3.select("#popup").style("display", "none");
+        d3.select("#similarity-results-container").html("");
+        event.stopPropagation();
+    });
+    d3.select("body").on("click", function(event) {
+        const popup = d3.select("#popup").node();
+        if (popup.style.display === "block" && !popup.contains(event.target)) {
+            d3.select("#popup").style("display", "none");
+            d3.select("#similarity-results-container").html("");
+        }
     });
 
-    d3.select("body").on("click", function (event) {
-      const popup = d3.select("#popup").node();
-      if (popup.style.display === "block" && !popup.contains(event.target)) {
-        d3.select("#popup").style("display", "none");
-      }
-    });
+    // --- 初始繪製 ---
+    updateVisualization();
+
   })
   .catch((error) => console.error("Error loading data:", error));
