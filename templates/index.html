@@ -9,6 +9,7 @@
         /* 可選：添加基本樣式 */
         body {
             margin: 0;
+            font-family: sans-serif;
         }
 
         #main-svg {
@@ -23,15 +24,28 @@
             width: 240px;
             height: 180px;
             border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
-        #legend {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: auto;
-            height: auto;
-            padding: 10px
+        #legend-container {
+            max-height: 340px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+        #search-container {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        #centroid-toggle-container {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        #search-box {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -39,12 +53,23 @@
 <body>
     <svg id="main-svg"></svg>
     <svg id="minimap"></svg>
-    <svg id="legend"></svg>
+    
+    <div id="controls-container" style="position: absolute; top: 20px; right: 20px; background-color: rgba(255, 255, 255, 0.85); padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-size: 14px;">
+        <div id="centroid-toggle-container">
+            <input type="checkbox" id="toggle-centroids" checked>
+            <label for="toggle-centroids">顯示群組中心</label>
+        </div>
+        <div id="search-container">
+            <input type="text" id="search-box" placeholder="依作者或檔名搜尋...">
+        </div>
+        <div id="legend-container"></div>
+    </div>
+
     <!-- 彈出視窗 -->
     <div id="popup"
         style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:1000;">
         <img id="popup-image" src="" style="max-width:300px; max-height:300px;" />
-        <p id="popup-info"></p>
+        <ul id="popup-info" style="list-style: none; padding: 10px 0 0 0;"></ul>
         <button id="close-popup">關閉</button>
     </div>
 

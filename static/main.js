@@ -133,64 +133,134 @@ d3.json("/get_van_gogh_data")
         event.stopPropagation();
       });
 
-    // 繪製圖例
-    // 聚合 class_name 對應的 labels
-    const classLabelsMap = {};
-    data.forEach((d) => {
-      if (!classLabelsMap[d.class_name]) {
-        classLabelsMap[d.class_name] = new Set();
-      }
-      classLabelsMap[d.class_name].add(d.labels);
-    });
+    // --- 計算並繪製群組中心點 ---
+    
+    // 1. 按作者分組並計算中心點
+    const groupedData = d3.group(data, d => d.author);
+    const centroidData = Array.from(groupedData, ([author, values]) => ({
+      author: author,
+      x: d3.mean(values, d => d.x),
+      y: d3.mean(values, d => d.y)
+    }));
 
-    // 生成 legendData
-    const legendData = Object.entries(classLabelsMap).map(
-      ([className, labelsSet]) => {
-        return {
-          className: className,
-          labels: [...labelsSet].join(", "),
-        };
-      }
-    );
-
-    // 繪製 legend
-    const legend = mainSvg
+    // 2. 繪製中心點
+    const centroidGroup = g.selectAll("g.centroid-group")
+      .data(centroidData)
+      .enter()
       .append("g")
-      .attr("transform", `translate(${width - 300}, 20)`);
+      .attr("class", "centroid-group");
 
-    // legend 背景底色（會先畫，所以在最底層）
-    const legendBg = legend
-      .append("rect")
-      .attr("fill", "white")
-      .attr("fill-opacity", 0.8)
-      .attr("rx", 8)
-      .attr("ry", 8); // ✅ 圓角可選
+    // 中心點的背景圓
+    centroidGroup.append("circle")
+      .attr("cx", d => xScale(d.x))
+      .attr("cy", d => yScale(d.y))
+      .attr("r", 30) // 中心點圓圈半徑
+      .style("fill", d => colorScale(d.author))
+      .style("fill-opacity", 0.2)
+      .style("stroke", d => colorScale(d.author))
+      .style("stroke-width", 2);
 
-    legendData.forEach((item, i) => {
-      const legendRow = legend
-        .append("g")
-        .attr("transform", `translate(0, ${i * 20})`);
+    // 中心點的作者文字
+    centroidGroup.append("text")
+      .attr("x", d => xScale(d.x))
+      .attr("y", d => yScale(d.y))
+      .attr("text-anchor", "middle")
+      .attr("dy", ".35em") // 垂直居中
+      .text(d => d.author)
+      .style("font-size", "12px")
+      .style("font-weight", "bold")
+      .style("fill", "#333")
+      .style("pointer-events", "none"); // 讓文字不影響滑鼠事件
 
-      legendRow
-        .append("rect")
-        .attr("width", 15)
-        .attr("height", 15)
-        .attr("fill", colorScale(item.className));
 
-      legendRow
-        .append("text")
-        .attr("x", 20)
-        .attr("y", 12)
-        .text(`Labels: ${item.labels} - ${item.className}`)
-        .style("font-size", "12px");
+    // --- 互動式篩選圖例 ---
+
+    // 取得所有作者 (與 class_name 相同)
+    const allAuthors = [...new Set(data.map(d => d.author))].sort();
+
+    // 選擇 HTML 容器
+    const legendContainer = d3.select("#legend-container");
+
+    // 為每位作者建立一個圖例項目
+    const legendItems = legendContainer.selectAll(".legend-item")
+      .data(allAuthors)
+      .enter()
+      .append("div")
+      .attr("class", "legend-item");
+
+    // 加入複選框
+    legendItems.append("input")
+      .attr("type", "checkbox")
+      .attr("id", d => `checkbox-${d}`)
+      .attr("value", d => d)
+      .property("checked", true) // 預設全選
+      .on("change", filterPoints); // 綁定事件
+
+    // 加入顏色方塊
+    legendItems.append("span")
+      .attr("class", "legend-color-box")
+      .style("background-color", d => colorScale(d));
+
+    // 加入作者名稱標籤
+    legendItems.append("label")
+      .attr("for", d => `checkbox-${d}`)
+      .text(d => d);
+
+    // --- 控制項事件監聽 ---
+    
+    // 中心點顯示切換
+    d3.select("#toggle-centroids").on("change", filterPoints);
+
+    function filterPoints() {
+      // 取得所有被選中的作者
+      const checkedAuthors = [];
+      legendContainer.selectAll("input[type=checkbox]").each(function(d) {
+        if (d3.select(this).property("checked")) {
+          checkedAuthors.push(d);
+        }
+      });
+
+      // 檢查中心點的顯示開關是否開啟
+      const areCentroidsVisible = d3.select("#toggle-centroids").property("checked");
+
+      // 根據選中的作者，更新主畫布上的圖片可見性
+      g.selectAll(".image-group")
+        .style("display", d => checkedAuthors.includes(d.author) ? "block" : "none");
+      
+      // 更新中心點的可見性 (需要同時考慮作者篩選和總開關)
+      g.selectAll(".centroid-group")
+        .style("display", d => (checkedAuthors.includes(d.author) && areCentroidsVisible) ? "block" : "none");
+
+      // 同時更新小地圖上的點的可見性
+      minimapSvg.selectAll("circle")
+        .style("display", d => checkedAuthors.includes(d.author) ? "inline" : "none");
+    }
+
+
+    // --- 搜尋功能 ---
+    d3.select("#search-box").on("input", function() {
+      const searchTerm = this.value.toLowerCase();
+
+      // 過渡效果，使不符合的項目變暗
+      g.selectAll(".image-group").each(function(d) {
+        const isMatch = d.author.toLowerCase().includes(searchTerm) || 
+                        d.image_url.toLowerCase().includes(searchTerm);
+        
+        d3.select(this)
+          .transition().duration(200)
+          .style("opacity", isMatch || searchTerm === "" ? 1.0 : 0.1);
+      });
+
+      minimapSvg.selectAll("circle").each(function(d) {
+        const isMatch = d.author.toLowerCase().includes(searchTerm) || 
+                        d.image_url.toLowerCase().includes(searchTerm);
+
+        d3.select(this)
+          .transition().duration(200)
+          .style("opacity", isMatch || searchTerm === "" ? 1.0 : 0.1);
+      });
     });
 
-    const legendBBox = legend.node().getBBox();
-    legendBg
-      .attr("x", legendBBox.x - 10)
-      .attr("y", legendBBox.y - 10)
-      .attr("width", legendBBox.width + 20)
-      .attr("height", legendBBox.height + 20);
 
     // 小地圖的縮放比例
     const minimapScale = 0.2;
