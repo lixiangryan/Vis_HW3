@@ -23,45 +23,82 @@ def download_and_unzip_dataset():
             os.makedirs(output_dir)
             print(f"已建立 '{output_dir}' 目錄。 সন")
 
-        print(f"--- 正在解壓縮資料至 '{output_dir}' 目錄 ---")
-        with zipfile.ZipFile(archive_path, 'r') as zip_ref:
-            # Kaggle 的資料集通常包含一個與資料集同名的根目錄
-            # 我們需要解壓縮後將內容移動到 'data' 的根目錄
+        if os.path.isdir(archive_path):
+            print(f"檢測到下載路徑為目錄: {archive_path}")
+            print(f"--- 正在複製資料至 '{output_dir}' 目錄 ---")
             
-            # 建立一個臨時解壓縮目錄
-            temp_unzip_dir = "temp_unzip"
-            if os.path.exists(temp_unzip_dir):
-                shutil.rmtree(temp_unzip_dir)
-            os.makedirs(temp_unzip_dir)
+            # 複製所有內容到 data 目錄
+            if os.listdir(output_dir):
+                 print(f"警告: '{output_dir}' 目錄不為空，可能會覆蓋檔案。")
 
-            zip_ref.extractall(temp_unzip_dir)
-            print("解壓縮完成。")
-
-            # 通常，Kaggle 資料集解壓縮後會有一個或多個子目錄
-            # 我們需要找到這些子目錄並將其內容移動到 'data' 目錄
-            for item in os.listdir(temp_unzip_dir):
-                item_path = os.path.join(temp_unzip_dir, item)
-                # 假設解壓縮後的第一層目錄就是我們想要的藝術家目錄
-                if os.path.isdir(item_path):
-                    # 如果 'data' 目錄下已存在同名資料夾，先刪除
-                    target_dir = os.path.join(output_dir, item)
-                    if os.path.exists(target_dir):
-                        shutil.rmtree(target_dir)
-                    # 移動資料夾
-                    shutil.move(item_path, output_dir)
-                    print(f"已將 '{item}' 移動至 '{output_dir}'")
+            for item in os.listdir(archive_path):
+                s = os.path.join(archive_path, item)
+                d = os.path.join(output_dir, item)
+                if os.path.isdir(s):
+                    if os.path.exists(d):
+                        shutil.rmtree(d)
+                    shutil.copytree(s, d)
+                else:
+                    shutil.copy2(s, d)
+            print("複製完成。")
+            
+        else:
+            print(f"--- 正在解壓縮資料至 '{output_dir}' 目錄 ---")
+            with zipfile.ZipFile(archive_path, 'r') as zip_ref:
+                # ... (保留原有的 zip 處理邏輯，雖然目前 kagglehub 似乎返回目錄)
+                zip_ref.extractall(output_dir) # 簡化：直接解壓到 data
+                print("解壓縮完成。")
         
-        print("--- 清理暫存檔案 ---")
-        # 移除下載的 .zip 檔案
-        os.remove(archive_path)
-        # 移除臨時解壓縮目錄
-        shutil.rmtree(temp_unzip_dir)
+        # 處理巢狀目錄結構 (例如 data/training/training/...)
+        print("--- 檢查並修正目錄結構 ---")
+        
+        # 檢查是否存在 data/training/training
+        nested_training_path = os.path.join(output_dir, "training", "training")
+        training_path = os.path.join(output_dir, "training")
+        
+        source_move_dir = None
+        
+        if os.path.exists(nested_training_path) and os.path.isdir(nested_training_path):
+             source_move_dir = nested_training_path
+        elif os.path.exists(training_path) and os.path.isdir(training_path):
+             # 檢查 training 下面是否直接是作者目錄，還是空的
+             # 如果 training 下面還有 training，上面那個 if 會抓到
+             # 這裡處理 data/training/[Authors] 的情況
+             source_move_dir = training_path
+
+        if source_move_dir:
+            print(f"發現巢狀目錄結構於: {source_move_dir}，正在移動檔案...")
+            for item in os.listdir(source_move_dir):
+                s = os.path.join(source_move_dir, item)
+                d = os.path.join(output_dir, item)
+                
+                if os.path.exists(d):
+                    if os.path.isdir(d):
+                        shutil.rmtree(d)
+                    else:
+                        os.remove(d)
+                
+                shutil.move(s, output_dir)
+                print(f"已移動: {item}")
+            
+            # 清理空的 training 目錄
+            print("清理空目錄...")
+            if os.path.exists(nested_training_path):
+                shutil.rmtree(training_path) # 刪除 data/training (包含裡面的 training)
+            elif os.path.exists(training_path):
+                shutil.rmtree(training_path)
+                
+        print("目錄結構修正完成。")
+
+        # 清理暫存檔案 (如果是 zip 下載的情況)
+        if not os.path.isdir(archive_path) and os.path.exists(archive_path):
+             os.remove(archive_path)
         
         print("\n資料集已成功準備就緒！")
 
     except Exception as e:
         print(f"\n處理過程中發生錯誤: {e}")
-        print("請確保您已使用 'kaggle login' 或設定了 'kaggle.json' API 金鑰。 সন")
+        print("請確保您已使用 'kaggle login' 或設定了 'kaggle.json' API 金鑰。 ")
 
 if __name__ == "__main__":
     download_and_unzip_dataset()

@@ -72,6 +72,7 @@ pip install --upgrade -r requirements.txt
 ```bash
 python scripts/download_dataset.py
 ```
+*註：此腳本會自動處理 Kaggle 下載的巢狀目錄結構，將圖片整理至 `data/` 根目錄下。*
 
 ## ▶️ 使用方式
 
