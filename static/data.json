@@ -1,0 +1,2802 @@
+[
+  {
+    "image_path": "Cezanne/215762.jpg",
+    "image_url": "data/Cezanne/215762.jpg",
+    "x": -0.7246469,
+    "y": 9.207867,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215978.jpg",
+    "image_url": "data/Cezanne/215978.jpg",
+    "x": 4.7038994,
+    "y": -15.8645,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Cezanne/215497.jpg",
+    "image_url": "data/Cezanne/215497.jpg",
+    "x": 0.8681656,
+    "y": 1.5781784,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215772.jpg",
+    "image_url": "data/Cezanne/215772.jpg",
+    "x": -3.5389924,
+    "y": 13.333205,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Cezanne/215596.jpg",
+    "image_url": "data/Cezanne/215596.jpg",
+    "x": -2.4970043,
+    "y": 4.8687444,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215579.jpg",
+    "image_url": "data/Cezanne/215579.jpg",
+    "x": -9.920882,
+    "y": 5.5995207,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/216011.jpg",
+    "image_url": "data/Cezanne/216011.jpg",
+    "x": 6.9529943,
+    "y": -8.297117,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Cezanne/215598.jpg",
+    "image_url": "data/Cezanne/215598.jpg",
+    "x": -4.4432216,
+    "y": 13.650836,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Cezanne/215798.jpg",
+    "image_url": "data/Cezanne/215798.jpg",
+    "x": 3.3327198,
+    "y": -6.4560738,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Cezanne/215645.jpg",
+    "image_url": "data/Cezanne/215645.jpg",
+    "x": -10.810333,
+    "y": -4.8315287,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Cezanne/215469.jpg",
+    "image_url": "data/Cezanne/215469.jpg",
+    "x": 6.3285413,
+    "y": 2.3035407,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215994.jpg",
+    "image_url": "data/Cezanne/215994.jpg",
+    "x": -9.928777,
+    "y": -6.4228287,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Cezanne/215535.jpg",
+    "image_url": "data/Cezanne/215535.jpg",
+    "x": -3.9239883,
+    "y": 5.974968,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Cezanne/215564.jpg",
+    "image_url": "data/Cezanne/215564.jpg",
+    "x": 0.56906587,
+    "y": -1.8382493,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Cezanne/215652.jpg",
+    "image_url": "data/Cezanne/215652.jpg",
+    "x": 0.627681,
+    "y": 3.9636786,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215516.jpg",
+    "image_url": "data/Cezanne/215516.jpg",
+    "x": -0.66267586,
+    "y": 10.121343,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Cezanne/216008.jpg",
+    "image_url": "data/Cezanne/216008.jpg",
+    "x": 1.2774825,
+    "y": 0.70702046,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Cezanne/215871.jpg",
+    "image_url": "data/Cezanne/215871.jpg",
+    "x": 5.624869,
+    "y": 2.22496,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215809.jpg",
+    "image_url": "data/Cezanne/215809.jpg",
+    "x": 3.8250165,
+    "y": -5.194334,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Cezanne/216019.jpg",
+    "image_url": "data/Cezanne/216019.jpg",
+    "x": -4.2143984,
+    "y": 12.7855625,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Cezanne/215572.jpg",
+    "image_url": "data/Cezanne/215572.jpg",
+    "x": 6.747397,
+    "y": 0.44410834,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Cezanne/215476.jpg",
+    "image_url": "data/Cezanne/215476.jpg",
+    "x": 1.3383579,
+    "y": -9.038769,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Cezanne/216035.jpg",
+    "image_url": "data/Cezanne/216035.jpg",
+    "x": 6.09447,
+    "y": 13.62246,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Cezanne/215825.jpg",
+    "image_url": "data/Cezanne/215825.jpg",
+    "x": -4.3729725,
+    "y": 11.253546,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Cezanne/215457.jpg",
+    "image_url": "data/Cezanne/215457.jpg",
+    "x": 0.06747255,
+    "y": -14.906756,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Cezanne/216040.jpg",
+    "image_url": "data/Cezanne/216040.jpg",
+    "x": -1.8405205,
+    "y": 9.106604,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Cezanne/215627.jpg",
+    "image_url": "data/Cezanne/215627.jpg",
+    "x": -4.2986836,
+    "y": -8.316848,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Cezanne/215819.jpg",
+    "image_url": "data/Cezanne/215819.jpg",
+    "x": -3.71099,
+    "y": 8.940558,
+    "class_name": "Cezanne",
+    "labels": 1,
+    "author": "Cezanne",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Degas/213574.jpg",
+    "image_url": "data/Degas/213574.jpg",
+    "x": 1.34589,
+    "y": -7.8919096,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Degas/9223372032559838153.jpg",
+    "image_url": "data/Degas/9223372032559838153.jpg",
+    "x": -7.2498364,
+    "y": 2.0587614,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213306.jpg",
+    "image_url": "data/Degas/213306.jpg",
+    "x": 10.721925,
+    "y": 3.4491827,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213591.jpg",
+    "image_url": "data/Degas/213591.jpg",
+    "x": -2.8768177,
+    "y": 13.465739,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Degas/213400.jpg",
+    "image_url": "data/Degas/213400.jpg",
+    "x": -2.1824613,
+    "y": 1.9164466,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213386.jpg",
+    "image_url": "data/Degas/213386.jpg",
+    "x": 1.854984,
+    "y": 10.363271,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Degas/213843.jpg",
+    "image_url": "data/Degas/213843.jpg",
+    "x": 4.360877,
+    "y": 12.2244425,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213403.jpg",
+    "image_url": "data/Degas/213403.jpg",
+    "x": -0.8851212,
+    "y": 2.3992445,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213612.jpg",
+    "image_url": "data/Degas/213612.jpg",
+    "x": 6.4308357,
+    "y": 0.69539535,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Degas/213452.jpg",
+    "image_url": "data/Degas/213452.jpg",
+    "x": -3.3870146,
+    "y": 9.914496,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Degas/213267.jpg",
+    "image_url": "data/Degas/213267.jpg",
+    "x": 4.4466457,
+    "y": -3.440909,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Degas/213868.jpg",
+    "image_url": "data/Degas/213868.jpg",
+    "x": 3.057127,
+    "y": 12.647404,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213341.jpg",
+    "image_url": "data/Degas/213341.jpg",
+    "x": 7.5700164,
+    "y": 13.300363,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213370.jpg",
+    "image_url": "data/Degas/213370.jpg",
+    "x": 8.46496,
+    "y": 11.243982,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Degas/213462.jpg",
+    "image_url": "data/Degas/213462.jpg",
+    "x": 2.8492808,
+    "y": -11.74389,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Degas/213323.jpg",
+    "image_url": "data/Degas/213323.jpg",
+    "x": 1.3835057,
+    "y": 18.074472,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213834.jpg",
+    "image_url": "data/Degas/213834.jpg",
+    "x": 4.858564,
+    "y": 13.156902,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213687.jpg",
+    "image_url": "data/Degas/213687.jpg",
+    "x": -8.182875,
+    "y": 14.729778,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Degas/213624.jpg",
+    "image_url": "data/Degas/213624.jpg",
+    "x": 10.732199,
+    "y": 3.46819,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213851.jpg",
+    "image_url": "data/Degas/213851.jpg",
+    "x": 5.454536,
+    "y": 11.906625,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213377.jpg",
+    "image_url": "data/Degas/213377.jpg",
+    "x": -5.4189167,
+    "y": -1.0969532,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213274.jpg",
+    "image_url": "data/Degas/213274.jpg",
+    "x": 10.435306,
+    "y": 9.076353,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213880.jpg",
+    "image_url": "data/Degas/213880.jpg",
+    "x": 2.4977922,
+    "y": 17.428581,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Degas/213636.jpg",
+    "image_url": "data/Degas/213636.jpg",
+    "x": -11.332561,
+    "y": -4.0677853,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Degas/213255.jpg",
+    "image_url": "data/Degas/213255.jpg",
+    "x": -0.55459553,
+    "y": 3.1387732,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Degas/9223372032559810721.jpg",
+    "image_url": "data/Degas/9223372032559810721.jpg",
+    "x": -4.2381935,
+    "y": 11.770407,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Degas/213431.jpg",
+    "image_url": "data/Degas/213431.jpg",
+    "x": 7.204418,
+    "y": 4.3477483,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Degas/213632.jpg",
+    "image_url": "data/Degas/213632.jpg",
+    "x": 6.5596285,
+    "y": 10.328298,
+    "class_name": "Degas",
+    "labels": 2,
+    "author": "Degas",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190702.jpg",
+    "image_url": "data/Gauguin/190702.jpg",
+    "x": -2.6674626,
+    "y": 9.996608,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Gauguin/190901.jpg",
+    "image_url": "data/Gauguin/190901.jpg",
+    "x": -0.4270852,
+    "y": -8.876197,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190499.jpg",
+    "image_url": "data/Gauguin/190499.jpg",
+    "x": 6.3102922,
+    "y": -0.38445818,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190716.jpg",
+    "image_url": "data/Gauguin/190716.jpg",
+    "x": -0.4040006,
+    "y": 7.7520823,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190575.jpg",
+    "image_url": "data/Gauguin/190575.jpg",
+    "x": -10.618241,
+    "y": 6.485677,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190561.jpg",
+    "image_url": "data/Gauguin/190561.jpg",
+    "x": 0.53824484,
+    "y": -9.65105,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190937.jpg",
+    "image_url": "data/Gauguin/190937.jpg",
+    "x": -0.4603026,
+    "y": -4.781225,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190576.jpg",
+    "image_url": "data/Gauguin/190576.jpg",
+    "x": 6.6040173,
+    "y": -5.7345357,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190732.jpg",
+    "image_url": "data/Gauguin/190732.jpg",
+    "x": -0.6289485,
+    "y": -13.094743,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190616.jpg",
+    "image_url": "data/Gauguin/190616.jpg",
+    "x": 0.41052628,
+    "y": -4.9549785,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190462.jpg",
+    "image_url": "data/Gauguin/190462.jpg",
+    "x": 0.9380736,
+    "y": 2.223709,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190915.jpg",
+    "image_url": "data/Gauguin/190915.jpg",
+    "x": 3.8101926,
+    "y": -0.6429051,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Gauguin/190526.jpg",
+    "image_url": "data/Gauguin/190526.jpg",
+    "x": 1.4998977,
+    "y": 3.4660745,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190547.jpg",
+    "image_url": "data/Gauguin/190547.jpg",
+    "x": 6.2213097,
+    "y": -5.7726846,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190623.jpg",
+    "image_url": "data/Gauguin/190623.jpg",
+    "x": -0.91623664,
+    "y": -2.967638,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190512.jpg",
+    "image_url": "data/Gauguin/190512.jpg",
+    "x": 1.0541567,
+    "y": -6.199923,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190934.jpg",
+    "image_url": "data/Gauguin/190934.jpg",
+    "x": -0.34081566,
+    "y": 0.45219094,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190803.jpg",
+    "image_url": "data/Gauguin/190803.jpg",
+    "x": -0.90658724,
+    "y": -5.56735,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190740.jpg",
+    "image_url": "data/Gauguin/190740.jpg",
+    "x": -8.364157,
+    "y": -7.291032,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Gauguin/190942.jpg",
+    "image_url": "data/Gauguin/190942.jpg",
+    "x": -1.4014534,
+    "y": 7.985069,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Gauguin/190553.jpg",
+    "image_url": "data/Gauguin/190553.jpg",
+    "x": 2.227609,
+    "y": -15.639207,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190473.jpg",
+    "image_url": "data/Gauguin/190473.jpg",
+    "x": -1.6558162,
+    "y": -4.3553157,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190962.jpg",
+    "image_url": "data/Gauguin/190962.jpg",
+    "x": 0.7112497,
+    "y": 8.794246,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190754.jpg",
+    "image_url": "data/Gauguin/190754.jpg",
+    "x": 1.3072779,
+    "y": 5.949642,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Gauguin/190448.jpg",
+    "image_url": "data/Gauguin/190448.jpg",
+    "x": -2.6786957,
+    "y": -4.5654597,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190967.jpg",
+    "image_url": "data/Gauguin/190967.jpg",
+    "x": 0.19503008,
+    "y": 0.738551,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Gauguin/190601.jpg",
+    "image_url": "data/Gauguin/190601.jpg",
+    "x": 0.055802204,
+    "y": -7.6479387,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Gauguin/190746.jpg",
+    "image_url": "data/Gauguin/190746.jpg",
+    "x": 2.2969253,
+    "y": -4.6262913,
+    "class_name": "Gauguin",
+    "labels": 3,
+    "author": "Gauguin",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Hassam/244134.jpg",
+    "image_url": "data/Hassam/244134.jpg",
+    "x": -3.2189357,
+    "y": -1.0329704,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Hassam/244348.jpg",
+    "image_url": "data/Hassam/244348.jpg",
+    "x": -8.252988,
+    "y": -8.187796,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/243904.jpg",
+    "image_url": "data/Hassam/243904.jpg",
+    "x": 2.3088489,
+    "y": -14.98521,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Hassam/244147.jpg",
+    "image_url": "data/Hassam/244147.jpg",
+    "x": 2.893521,
+    "y": 20.352985,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Hassam/243982.jpg",
+    "image_url": "data/Hassam/243982.jpg",
+    "x": -3.4078429,
+    "y": -13.59598,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Hassam/243970.jpg",
+    "image_url": "data/Hassam/243970.jpg",
+    "x": -9.91705,
+    "y": -8.411981,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/244386.jpg",
+    "image_url": "data/Hassam/244386.jpg",
+    "x": -14.868708,
+    "y": -1.1263646,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Hassam/243984.jpg",
+    "image_url": "data/Hassam/243984.jpg",
+    "x": -5.977649,
+    "y": -8.337446,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/244181.jpg",
+    "image_url": "data/Hassam/244181.jpg",
+    "x": -14.882146,
+    "y": -1.1290648,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Hassam/244030.jpg",
+    "image_url": "data/Hassam/244030.jpg",
+    "x": -6.7320747,
+    "y": -12.962612,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/243871.jpg",
+    "image_url": "data/Hassam/243871.jpg",
+    "x": -9.386785,
+    "y": -11.025172,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Hassam/244366.jpg",
+    "image_url": "data/Hassam/244366.jpg",
+    "x": -7.4113135,
+    "y": 8.463024,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Hassam/243934.jpg",
+    "image_url": "data/Hassam/243934.jpg",
+    "x": -7.496907,
+    "y": 2.0023093,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Hassam/243954.jpg",
+    "image_url": "data/Hassam/243954.jpg",
+    "x": 2.8422143,
+    "y": 20.402561,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Hassam/244038.jpg",
+    "image_url": "data/Hassam/244038.jpg",
+    "x": -4.7483416,
+    "y": -13.175464,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/243914.jpg",
+    "image_url": "data/Hassam/243914.jpg",
+    "x": 8.544508,
+    "y": -2.2571328,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Hassam/244381.jpg",
+    "image_url": "data/Hassam/244381.jpg",
+    "x": -5.5827494,
+    "y": -2.0414093,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Hassam/244249.jpg",
+    "image_url": "data/Hassam/244249.jpg",
+    "x": -7.4365387,
+    "y": -10.841979,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/244188.jpg",
+    "image_url": "data/Hassam/244188.jpg",
+    "x": -9.485321,
+    "y": -9.121054,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/244391.jpg",
+    "image_url": "data/Hassam/244391.jpg",
+    "x": -7.33209,
+    "y": -7.589161,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/243959.jpg",
+    "image_url": "data/Hassam/243959.jpg",
+    "x": 9.367434,
+    "y": -2.9576814,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Hassam/243881.jpg",
+    "image_url": "data/Hassam/243881.jpg",
+    "x": -8.0291395,
+    "y": 1.0866761,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/244410.jpg",
+    "image_url": "data/Hassam/244410.jpg",
+    "x": -5.337751,
+    "y": -11.097782,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/244199.jpg",
+    "image_url": "data/Hassam/244199.jpg",
+    "x": -9.9963255,
+    "y": -8.193106,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Hassam/243854.jpg",
+    "image_url": "data/Hassam/243854.jpg",
+    "x": -2.4196498,
+    "y": -10.862075,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Hassam/244418.jpg",
+    "image_url": "data/Hassam/244418.jpg",
+    "x": -9.089214,
+    "y": 4.6020017,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Hassam/244013.jpg",
+    "image_url": "data/Hassam/244013.jpg",
+    "x": -4.3280816,
+    "y": 0.64574975,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Hassam/244194.jpg",
+    "image_url": "data/Hassam/244194.jpg",
+    "x": -3.4789846,
+    "y": -15.163021,
+    "class_name": "Hassam",
+    "labels": 4,
+    "author": "Hassam",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Matisse/9223372032559820480.jpg",
+    "image_url": "data/Matisse/9223372032559820480.jpg",
+    "x": 0.39515758,
+    "y": 5.6393867,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559821573.jpg",
+    "image_url": "data/Matisse/9223372032559821573.jpg",
+    "x": -2.2321918,
+    "y": 8.763524,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Matisse/213962.jpg",
+    "image_url": "data/Matisse/213962.jpg",
+    "x": 1.9308002,
+    "y": 4.8910413,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559820506.jpg",
+    "image_url": "data/Matisse/9223372032559820506.jpg",
+    "x": 2.838285,
+    "y": -7.927012,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Matisse/214127.jpg",
+    "image_url": "data/Matisse/214127.jpg",
+    "x": 10.0546465,
+    "y": -1.1059842,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Matisse/214107.jpg",
+    "image_url": "data/Matisse/214107.jpg",
+    "x": 5.6491776,
+    "y": 15.841168,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Matisse/9223372032559824224.jpg",
+    "image_url": "data/Matisse/9223372032559824224.jpg",
+    "x": 5.238015,
+    "y": -4.307901,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/214128.jpg",
+    "image_url": "data/Matisse/214128.jpg",
+    "x": 10.246976,
+    "y": -2.7466404,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Matisse/9223372032559820549.jpg",
+    "image_url": "data/Matisse/9223372032559820549.jpg",
+    "x": 1.3326756,
+    "y": 5.955694,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/214224.jpg",
+    "image_url": "data/Matisse/214224.jpg",
+    "x": 8.296376,
+    "y": 0.9900394,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Matisse/213918.jpg",
+    "image_url": "data/Matisse/213918.jpg",
+    "x": 3.0479162,
+    "y": 5.537122,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559822167.jpg",
+    "image_url": "data/Matisse/9223372032559822167.jpg",
+    "x": 2.5097759,
+    "y": 7.846116,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/214025.jpg",
+    "image_url": "data/Matisse/214025.jpg",
+    "x": -6.725261,
+    "y": 9.120904,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Matisse/214079.jpg",
+    "image_url": "data/Matisse/214079.jpg",
+    "x": -8.478667,
+    "y": -6.6394944,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Matisse/214246.jpg",
+    "image_url": "data/Matisse/214246.jpg",
+    "x": 4.6386375,
+    "y": 2.191979,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Matisse/213994.jpg",
+    "image_url": "data/Matisse/213994.jpg",
+    "x": 4.385059,
+    "y": 7.1496778,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Matisse/9223372032559822378.jpg",
+    "image_url": "data/Matisse/9223372032559822378.jpg",
+    "x": 5.396276,
+    "y": 8.60681,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Matisse/9223372032559820874.jpg",
+    "image_url": "data/Matisse/9223372032559820874.jpg",
+    "x": 1.0288378,
+    "y": 7.42988,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559820587.jpg",
+    "image_url": "data/Matisse/9223372032559820587.jpg",
+    "x": 1.7949466,
+    "y": 6.663209,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559829859.jpg",
+    "image_url": "data/Matisse/9223372032559829859.jpg",
+    "x": 3.2105763,
+    "y": 3.375369,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/214096.jpg",
+    "image_url": "data/Matisse/214096.jpg",
+    "x": 3.5064538,
+    "y": 10.976938,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Matisse/213933.jpg",
+    "image_url": "data/Matisse/213933.jpg",
+    "x": 4.867283,
+    "y": 15.881918,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Matisse/9223372032559839735.jpg",
+    "image_url": "data/Matisse/9223372032559839735.jpg",
+    "x": 3.2591317,
+    "y": 6.88999,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559820602.jpg",
+    "image_url": "data/Matisse/9223372032559820602.jpg",
+    "x": 3.2850533,
+    "y": 7.97089,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/213891.jpg",
+    "image_url": "data/Matisse/213891.jpg",
+    "x": 7.2756515,
+    "y": -0.09056519,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Matisse/9223372032559840827.jpg",
+    "image_url": "data/Matisse/9223372032559840827.jpg",
+    "x": 3.285983,
+    "y": -5.403034,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Matisse/214176.jpg",
+    "image_url": "data/Matisse/214176.jpg",
+    "x": -0.35574117,
+    "y": 8.858575,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Matisse/9223372032559820594.jpg",
+    "image_url": "data/Matisse/9223372032559820594.jpg",
+    "x": 2.1871812,
+    "y": 6.0529537,
+    "class_name": "Matisse",
+    "labels": 5,
+    "author": "Matisse",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Monet/212334.jpg",
+    "image_url": "data/Monet/212334.jpg",
+    "x": -5.7594767,
+    "y": -8.08963,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Monet/212864.jpg",
+    "image_url": "data/Monet/212864.jpg",
+    "x": 3.610553,
+    "y": -11.766429,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/211798.jpg",
+    "image_url": "data/Monet/211798.jpg",
+    "x": 0.7320701,
+    "y": -12.750934,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212354.jpg",
+    "image_url": "data/Monet/212354.jpg",
+    "x": -3.7323716,
+    "y": 19.669949,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Monet/211968.jpg",
+    "image_url": "data/Monet/211968.jpg",
+    "x": 0.97332525,
+    "y": -19.674519,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Monet/211946.jpg",
+    "image_url": "data/Monet/211946.jpg",
+    "x": 2.8467264,
+    "y": -14.096253,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212982.jpg",
+    "image_url": "data/Monet/212982.jpg",
+    "x": 4.8969812,
+    "y": -10.669889,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/211969.jpg",
+    "image_url": "data/Monet/211969.jpg",
+    "x": 0.97387046,
+    "y": -19.60366,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212407.jpg",
+    "image_url": "data/Monet/212407.jpg",
+    "x": 0.84891874,
+    "y": -10.172728,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212071.jpg",
+    "image_url": "data/Monet/212071.jpg",
+    "x": 3.3289626,
+    "y": -10.540418,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/211731.jpg",
+    "image_url": "data/Monet/211731.jpg",
+    "x": 0.5113728,
+    "y": -16.741587,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212907.jpg",
+    "image_url": "data/Monet/212907.jpg",
+    "x": 1.7901788,
+    "y": -9.907355,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/211872.jpg",
+    "image_url": "data/Monet/211872.jpg",
+    "x": -5.897064,
+    "y": -13.018572,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Monet/211914.jpg",
+    "image_url": "data/Monet/211914.jpg",
+    "x": -10.683519,
+    "y": -0.6179305,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Monet/212100.jpg",
+    "image_url": "data/Monet/212100.jpg",
+    "x": -1.5844269,
+    "y": -12.786744,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/211829.jpg",
+    "image_url": "data/Monet/211829.jpg",
+    "x": 4.6681128,
+    "y": -10.645837,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212967.jpg",
+    "image_url": "data/Monet/212967.jpg",
+    "x": 3.938425,
+    "y": -11.422361,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212606.jpg",
+    "image_url": "data/Monet/212606.jpg",
+    "x": -0.6867938,
+    "y": -14.065861,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212425.jpg",
+    "image_url": "data/Monet/212425.jpg",
+    "x": -3.2922018,
+    "y": -14.824954,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/212990.jpg",
+    "image_url": "data/Monet/212990.jpg",
+    "x": 2.9635396,
+    "y": -9.772887,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/211923.jpg",
+    "image_url": "data/Monet/211923.jpg",
+    "x": -9.073537,
+    "y": 4.59605,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Monet/211750.jpg",
+    "image_url": "data/Monet/211750.jpg",
+    "x": -1.2560818,
+    "y": -12.284088,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/213043.jpg",
+    "image_url": "data/Monet/213043.jpg",
+    "x": -3.0285027,
+    "y": 1.1210257,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Monet/212452.jpg",
+    "image_url": "data/Monet/212452.jpg",
+    "x": -7.776228,
+    "y": -8.608299,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Monet/211709.jpg",
+    "image_url": "data/Monet/211709.jpg",
+    "x": 3.6964202,
+    "y": -13.208363,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Monet/9223372032559829994.jpg",
+    "image_url": "data/Monet/9223372032559829994.jpg",
+    "x": -11.311786,
+    "y": -9.712834,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Monet/212035.jpg",
+    "image_url": "data/Monet/212035.jpg",
+    "x": 6.0583897,
+    "y": -11.271888,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "Monet/212441.jpg",
+    "image_url": "data/Monet/212441.jpg",
+    "x": -3.9996517,
+    "y": -11.533099,
+    "class_name": "Monet",
+    "labels": 6,
+    "author": "Monet",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208477.jpg",
+    "image_url": "data/Pissarro/208477.jpg",
+    "x": -4.5709486,
+    "y": 14.925912,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Pissarro/208924.jpg",
+    "image_url": "data/Pissarro/208924.jpg",
+    "x": -6.1050997,
+    "y": 6.516975,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Pissarro/208094.jpg",
+    "image_url": "data/Pissarro/208094.jpg",
+    "x": 0.075181514,
+    "y": -0.612376,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Pissarro/208500.jpg",
+    "image_url": "data/Pissarro/208500.jpg",
+    "x": -1.5952051,
+    "y": -8.899799,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208236.jpg",
+    "image_url": "data/Pissarro/208236.jpg",
+    "x": -0.3474022,
+    "y": -11.370219,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208212.jpg",
+    "image_url": "data/Pissarro/208212.jpg",
+    "x": -1.7770927,
+    "y": 11.506914,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Pissarro/208873.jpg",
+    "image_url": "data/Pissarro/208873.jpg",
+    "x": -4.878818,
+    "y": -9.400956,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208237.jpg",
+    "image_url": "data/Pissarro/208237.jpg",
+    "x": -5.556133,
+    "y": 17.66244,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Pissarro/208523.jpg",
+    "image_url": "data/Pissarro/208523.jpg",
+    "x": -7.9862328,
+    "y": -4.3174806,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208315.jpg",
+    "image_url": "data/Pissarro/208315.jpg",
+    "x": -1.108756,
+    "y": -9.918223,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208048.jpg",
+    "image_url": "data/Pissarro/208048.jpg",
+    "x": -11.430475,
+    "y": -7.70059,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208901.jpg",
+    "image_url": "data/Pissarro/208901.jpg",
+    "x": -6.3039,
+    "y": -4.9250236,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208162.jpg",
+    "image_url": "data/Pissarro/208162.jpg",
+    "x": -3.2698433,
+    "y": -5.8011866,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Pissarro/208189.jpg",
+    "image_url": "data/Pissarro/208189.jpg",
+    "x": -3.7267895,
+    "y": -9.123715,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208325.jpg",
+    "image_url": "data/Pissarro/208325.jpg",
+    "x": -6.237977,
+    "y": -9.486056,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Pissarro/208126.jpg",
+    "image_url": "data/Pissarro/208126.jpg",
+    "x": -0.4261431,
+    "y": -14.967283,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208865.jpg",
+    "image_url": "data/Pissarro/208865.jpg",
+    "x": -1.0557469,
+    "y": -10.672487,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208645.jpg",
+    "image_url": "data/Pissarro/208645.jpg",
+    "x": -2.7273607,
+    "y": -14.192053,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208541.jpg",
+    "image_url": "data/Pissarro/208541.jpg",
+    "x": -1.7116561,
+    "y": -1.545648,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Pissarro/208883.jpg",
+    "image_url": "data/Pissarro/208883.jpg",
+    "x": -1.8109145,
+    "y": -11.010804,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208194.jpg",
+    "image_url": "data/Pissarro/208194.jpg",
+    "x": 0.42236516,
+    "y": -11.732782,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208062.jpg",
+    "image_url": "data/Pissarro/208062.jpg",
+    "x": -1.599281,
+    "y": -0.5731895,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Pissarro/208914.jpg",
+    "image_url": "data/Pissarro/208914.jpg",
+    "x": -0.08253132,
+    "y": 12.354448,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Pissarro/208560.jpg",
+    "image_url": "data/Pissarro/208560.jpg",
+    "x": -2.7474475,
+    "y": -7.788375,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Pissarro/208034.jpg",
+    "image_url": "data/Pissarro/208034.jpg",
+    "x": -4.6864133,
+    "y": -6.6529603,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Pissarro/208922.jpg",
+    "image_url": "data/Pissarro/208922.jpg",
+    "x": 3.7543173,
+    "y": 17.204832,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Pissarro/208288.jpg",
+    "image_url": "data/Pissarro/208288.jpg",
+    "x": -3.262149,
+    "y": -10.048058,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Pissarro/208550.jpg",
+    "image_url": "data/Pissarro/208550.jpg",
+    "x": 0.39761114,
+    "y": -3.9705465,
+    "class_name": "Pissarro",
+    "labels": 7,
+    "author": "Pissarro",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Renoir/218906.jpg",
+    "image_url": "data/Renoir/218906.jpg",
+    "x": 0.76730597,
+    "y": 15.503685,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/219417.jpg",
+    "image_url": "data/Renoir/219417.jpg",
+    "x": -0.0041129095,
+    "y": 13.344859,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218284.jpg",
+    "image_url": "data/Renoir/218284.jpg",
+    "x": 4.8778524,
+    "y": -13.36663,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Renoir/218935.jpg",
+    "image_url": "data/Renoir/218935.jpg",
+    "x": -1.5480767,
+    "y": 14.497791,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Renoir/218544.jpg",
+    "image_url": "data/Renoir/218544.jpg",
+    "x": 3.0571997,
+    "y": 14.214412,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218497.jpg",
+    "image_url": "data/Renoir/218497.jpg",
+    "x": 9.001343,
+    "y": 11.977565,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Renoir/219502.jpg",
+    "image_url": "data/Renoir/219502.jpg",
+    "x": -4.9766684,
+    "y": 6.2317085,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Renoir/218547.jpg",
+    "image_url": "data/Renoir/218547.jpg",
+    "x": -2.336102,
+    "y": 15.208428,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218991.jpg",
+    "image_url": "data/Renoir/218991.jpg",
+    "x": 5.785472,
+    "y": -0.86215425,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Renoir/218672.jpg",
+    "image_url": "data/Renoir/218672.jpg",
+    "x": 1.294951,
+    "y": -11.384508,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Renoir/218196.jpg",
+    "image_url": "data/Renoir/218196.jpg",
+    "x": -1.0508922,
+    "y": 14.485202,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Renoir/219442.jpg",
+    "image_url": "data/Renoir/219442.jpg",
+    "x": -3.9555538,
+    "y": -7.055242,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Renoir/218369.jpg",
+    "image_url": "data/Renoir/218369.jpg",
+    "x": 0.736815,
+    "y": 14.815815,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218445.jpg",
+    "image_url": "data/Renoir/218445.jpg",
+    "x": 5.1147957,
+    "y": -7.364572,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Renoir/218690.jpg",
+    "image_url": "data/Renoir/218690.jpg",
+    "x": -5.0750637,
+    "y": 10.689201,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Renoir/218332.jpg",
+    "image_url": "data/Renoir/218332.jpg",
+    "x": 3.8165987,
+    "y": -7.890912,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Renoir/219490.jpg",
+    "image_url": "data/Renoir/219490.jpg",
+    "x": 6.584638,
+    "y": 11.399147,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/219164.jpg",
+    "image_url": "data/Renoir/219164.jpg",
+    "x": -3.7325945,
+    "y": -4.0687065,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "Renoir/219009.jpg",
+    "image_url": "data/Renoir/219009.jpg",
+    "x": -2.229146,
+    "y": -16.592705,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Renoir/219511.jpg",
+    "image_url": "data/Renoir/219511.jpg",
+    "x": 2.3328936,
+    "y": 14.133737,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218465.jpg",
+    "image_url": "data/Renoir/218465.jpg",
+    "x": 0.1923349,
+    "y": 13.732827,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218210.jpg",
+    "image_url": "data/Renoir/218210.jpg",
+    "x": 1.5761456,
+    "y": 13.887831,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/219560.jpg",
+    "image_url": "data/Renoir/219560.jpg",
+    "x": -5.363172,
+    "y": 6.1836867,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Renoir/219044.jpg",
+    "image_url": "data/Renoir/219044.jpg",
+    "x": -4.492115,
+    "y": 12.454977,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Renoir/218172.jpg",
+    "image_url": "data/Renoir/218172.jpg",
+    "x": -8.942367,
+    "y": -7.1848307,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Renoir/219576.jpg",
+    "image_url": "data/Renoir/219576.jpg",
+    "x": 8.246728,
+    "y": 11.995169,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Renoir/218629.jpg",
+    "image_url": "data/Renoir/218629.jpg",
+    "x": 1.3562685,
+    "y": -11.794341,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Renoir/219028.jpg",
+    "image_url": "data/Renoir/219028.jpg",
+    "x": 4.2224154,
+    "y": 12.672648,
+    "class_name": "Renoir",
+    "labels": 8,
+    "author": "Renoir",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Sargent/266045.jpg",
+    "image_url": "data/Sargent/266045.jpg",
+    "x": 1.0857991,
+    "y": 11.69388,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Sargent/266354.jpg",
+    "image_url": "data/Sargent/266354.jpg",
+    "x": -2.4552479,
+    "y": -12.60669,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Sargent/265715.jpg",
+    "image_url": "data/Sargent/265715.jpg",
+    "x": 1.9701006,
+    "y": 9.304118,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Sargent/266059.jpg",
+    "image_url": "data/Sargent/266059.jpg",
+    "x": -4.576147,
+    "y": 9.741075,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Sargent/265849.jpg",
+    "image_url": "data/Sargent/265849.jpg",
+    "x": -10.678661,
+    "y": -0.60568446,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Sargent/265827.jpg",
+    "image_url": "data/Sargent/265827.jpg",
+    "x": -8.053392,
+    "y": 10.990112,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Sargent/266398.jpg",
+    "image_url": "data/Sargent/266398.jpg",
+    "x": 5.4046555,
+    "y": 5.9098396,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Sargent/265850.jpg",
+    "image_url": "data/Sargent/265850.jpg",
+    "x": 2.7752512,
+    "y": 1.3402945,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Sargent/266087.jpg",
+    "image_url": "data/Sargent/266087.jpg",
+    "x": -4.5927367,
+    "y": -7.865719,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Sargent/265922.jpg",
+    "image_url": "data/Sargent/265922.jpg",
+    "x": 4.449795,
+    "y": 4.3494034,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Sargent/265663.jpg",
+    "image_url": "data/Sargent/265663.jpg",
+    "x": -8.0664,
+    "y": -4.2499166,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Sargent/266372.jpg",
+    "image_url": "data/Sargent/266372.jpg",
+    "x": -2.210712,
+    "y": -13.311736,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "Sargent/265774.jpg",
+    "image_url": "data/Sargent/265774.jpg",
+    "x": -11.49474,
+    "y": -9.847411,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "Sargent/265807.jpg",
+    "image_url": "data/Sargent/265807.jpg",
+    "x": -6.32319,
+    "y": 11.180012,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Sargent/265931.jpg",
+    "image_url": "data/Sargent/265931.jpg",
+    "x": -4.7939925,
+    "y": 10.594767,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Sargent/265745.jpg",
+    "image_url": "data/Sargent/265745.jpg",
+    "x": 3.0086105,
+    "y": 18.297882,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Sargent/266394.jpg",
+    "image_url": "data/Sargent/266394.jpg",
+    "x": -6.944661,
+    "y": 2.9163327,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Sargent/266198.jpg",
+    "image_url": "data/Sargent/266198.jpg",
+    "x": 4.8369794,
+    "y": 19.319048,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Sargent/266095.jpg",
+    "image_url": "data/Sargent/266095.jpg",
+    "x": -5.2909236,
+    "y": 9.049731,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Sargent/266403.jpg",
+    "image_url": "data/Sargent/266403.jpg",
+    "x": 5.2154584,
+    "y": 17.776134,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Sargent/265814.jpg",
+    "image_url": "data/Sargent/265814.jpg",
+    "x": -6.7206945,
+    "y": -6.4418173,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Sargent/265677.jpg",
+    "image_url": "data/Sargent/265677.jpg",
+    "x": 4.805138,
+    "y": 17.877409,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "Sargent/266428.jpg",
+    "image_url": "data/Sargent/266428.jpg",
+    "x": -8.352044,
+    "y": 14.741038,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Sargent/266114.jpg",
+    "image_url": "data/Sargent/266114.jpg",
+    "x": -2.1946464,
+    "y": 12.951723,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "Sargent/265645.jpg",
+    "image_url": "data/Sargent/265645.jpg",
+    "x": -1.6179925,
+    "y": 13.67331,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "Sargent/266436.jpg",
+    "image_url": "data/Sargent/266436.jpg",
+    "x": 6.2510424,
+    "y": -3.4489768,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Sargent/265887.jpg",
+    "image_url": "data/Sargent/265887.jpg",
+    "x": 1.2162504,
+    "y": 11.262866,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "Sargent/266109.jpg",
+    "image_url": "data/Sargent/266109.jpg",
+    "x": 4.013697,
+    "y": -15.431355,
+    "class_name": "Sargent",
+    "labels": 9,
+    "author": "Sargent",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/206532.jpg",
+    "image_url": "data/VanGogh/206532.jpg",
+    "x": -1.0635483,
+    "y": 15.983824,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "VanGogh/207388.jpg",
+    "image_url": "data/VanGogh/207388.jpg",
+    "x": 8.825442,
+    "y": 6.4487214,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "VanGogh/205760.jpg",
+    "image_url": "data/VanGogh/205760.jpg",
+    "x": 2.6290526,
+    "y": 4.2215023,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "VanGogh/206605.jpg",
+    "image_url": "data/VanGogh/206605.jpg",
+    "x": -5.7605863,
+    "y": -15.20863,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "VanGogh/206003.jpg",
+    "image_url": "data/VanGogh/206003.jpg",
+    "x": 7.91564,
+    "y": 7.2765093,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "VanGogh/205961.jpg",
+    "image_url": "data/VanGogh/205961.jpg",
+    "x": -3.05122,
+    "y": 18.023998,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "VanGogh/207470.jpg",
+    "image_url": "data/VanGogh/207470.jpg",
+    "x": -0.8595106,
+    "y": 19.593676,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 2
+  },
+  {
+    "image_path": "VanGogh/206005.jpg",
+    "image_url": "data/VanGogh/206005.jpg",
+    "x": 5.550317,
+    "y": -9.572668,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "VanGogh/206656.jpg",
+    "image_url": "data/VanGogh/206656.jpg",
+    "x": -0.61328065,
+    "y": 6.698547,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "VanGogh/206167.jpg",
+    "image_url": "data/VanGogh/206167.jpg",
+    "x": 7.7513466,
+    "y": 7.4786696,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "VanGogh/205680.jpg",
+    "image_url": "data/VanGogh/205680.jpg",
+    "x": 7.6936684,
+    "y": -0.89570993,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 0
+  },
+  {
+    "image_path": "VanGogh/207419.jpg",
+    "image_url": "data/VanGogh/207419.jpg",
+    "x": 1.9100738,
+    "y": -12.673118,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/205847.jpg",
+    "image_url": "data/VanGogh/205847.jpg",
+    "x": 8.559815,
+    "y": -10.638877,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/205908.jpg",
+    "image_url": "data/VanGogh/205908.jpg",
+    "x": 2.281576,
+    "y": -10.977611,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/206215.jpg",
+    "image_url": "data/VanGogh/206215.jpg",
+    "x": 8.306994,
+    "y": -9.971059,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/205805.jpg",
+    "image_url": "data/VanGogh/205805.jpg",
+    "x": -10.648863,
+    "y": 3.5008948,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/207464.jpg",
+    "image_url": "data/VanGogh/207464.jpg",
+    "x": -2.044911,
+    "y": 18.999006,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "VanGogh/206958.jpg",
+    "image_url": "data/VanGogh/206958.jpg",
+    "x": 8.82036,
+    "y": 1.0015619,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 6
+  },
+  {
+    "image_path": "VanGogh/206684.jpg",
+    "image_url": "data/VanGogh/206684.jpg",
+    "x": -3.8749988,
+    "y": 8.338595,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "VanGogh/207478.jpg",
+    "image_url": "data/VanGogh/207478.jpg",
+    "x": 0.7411157,
+    "y": -13.69053,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 7
+  },
+  {
+    "image_path": "VanGogh/205919.jpg",
+    "image_url": "data/VanGogh/205919.jpg",
+    "x": -10.967889,
+    "y": -4.643397,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "VanGogh/205692.jpg",
+    "image_url": "data/VanGogh/205692.jpg",
+    "x": -5.5708084,
+    "y": -14.985274,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 3
+  },
+  {
+    "image_path": "VanGogh/207532.jpg",
+    "image_url": "data/VanGogh/207532.jpg",
+    "x": -3.8680499,
+    "y": 16.971529,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "VanGogh/206730.jpg",
+    "image_url": "data/VanGogh/206730.jpg",
+    "x": -3.1846056,
+    "y": 3.8695269,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "VanGogh/205634.jpg",
+    "image_url": "data/VanGogh/205634.jpg",
+    "x": 8.9585495,
+    "y": -9.514683,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 5
+  },
+  {
+    "image_path": "VanGogh/207553.jpg",
+    "image_url": "data/VanGogh/207553.jpg",
+    "x": 8.09442,
+    "y": 14.179948,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 4
+  },
+  {
+    "image_path": "VanGogh/206095.jpg",
+    "image_url": "data/VanGogh/206095.jpg",
+    "x": -2.1511722,
+    "y": 6.9699965,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 1
+  },
+  {
+    "image_path": "VanGogh/206704.jpg",
+    "image_url": "data/VanGogh/206704.jpg",
+    "x": -3.3646889,
+    "y": 19.288752,
+    "class_name": "VanGogh",
+    "labels": 10,
+    "author": "VanGogh",
+    "cluster_id": 4
+  }
+]

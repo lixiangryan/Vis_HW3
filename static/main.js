@@ -4,8 +4,21 @@ const minimapSvg = d3.select("#minimap");
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-d3.json("/get_van_gogh_data")
-  .then((data) => {
+// 全域變數儲存特徵向量 (從 vectors.js 載入)
+let featureVectors = window.GLOBAL_VECTORS || {};
+
+if (!window.GLOBAL_VECTORS) {
+    console.warn("未檢測到 window.GLOBAL_VECTORS，相似度功能可能無法使用。");
+} else {
+    console.log("特徵向量載入完成 (from vectors.js)");
+}
+
+// 載入主資料 (從 data.js 載入)
+const data = window.GLOBAL_DATA || [];
+
+if (data.length === 0) {
+    console.error("未檢測到 window.GLOBAL_DATA，請確認 data.js 是否正確載入。");
+} else {
     // ===================================
     // 1. 全域變數與初始設定
     // ===================================
@@ -32,30 +45,27 @@ d3.json("/get_van_gogh_data")
         .attr("xlink:href", d => d.image_url)
         .attr("x", d => d.x0).attr("y", d => d.y0)
         .attr("width", 30).attr("height", 30)
-        .on("mouseover", function(event, d) {
+        .on("mouseover", function (event, d) {
             d3.select(this.parentNode).raise();
             d3.select(this).transition().duration(200).attr("x", d.x0 - 5).attr("y", d.y0 - 5).attr("width", 40).attr("height", 40);
             d3.select(this.previousSibling).transition().duration(200).attr("x", d.x0 - 10).attr("y", d.y0 - 10).attr("width", 50).attr("height", 50);
         })
-        .on("mouseout", function(event, d) {
+        .on("mouseout", function (event, d) {
             d3.select(this).transition().duration(200).attr("x", d.x0).attr("y", d.y0).attr("width", 30).attr("height", 30);
             d3.select(this.previousSibling).transition().duration(200).attr("x", d.x0).attr("y", d.y0).attr("width", 30).attr("height", 30);
         })
-        .on("click", function(event, d) {
+        .on("click", function (event, d) {
             // 顯示主彈出視窗
             d3.select("#popup").style("display", "block");
             d3.select("#popup-image").attr("src", d.image_url);
             const fileName = d.image_url.split("/").pop().split(".")[0];
             d3.select("#popup-info").html(`<li>Name: ${fileName}</li><li>Author: ${d.author}</li><li>Cluster ID: ${d.cluster_id}</li>`);
             event.stopPropagation();
-            // 在左下角容器顯示相似圖片
-            fetch(`/get_similar_images?path=${encodeURIComponent(d.image_path)}`)
-                .then(response => response.json())
-                .then(similarPaths => {
-                    const neighborsData = similarPaths.slice(1).map(path => data.find(item => item.image_path === path)).filter(item => item);
-                    d3.select("#similarity-results-container").html("").selectAll("img").data(neighborsData).join("img").attr("src", d => d.image_url);
-                })
-                .catch(error => console.error("Error fetching similar images:", error));
+
+            // 在左下角容器顯示相似圖片 (前端計算)
+            const similarPaths = getSimilarImages(d.image_path);
+            const neighborsData = similarPaths.slice(1).map(path => data.find(item => item.image_path === path)).filter(item => item);
+            d3.select("#similarity-results-container").html("").selectAll("img").data(neighborsData).join("img").attr("src", d => d.image_url);
         });
 
     // -------------------
@@ -74,10 +84,10 @@ d3.json("/get_van_gogh_data")
     // ===================================
     function updateVisualization() {
         const colorKey = colorMode; // 'author' 或 'cluster_id'
-        
+
         // 2a. 更新顏色比例尺
         const uniqueValues = [...new Set(data.map(d => d[colorKey]))].sort((a, b) => a - b); // 加入數字排序
-        
+
         // --- DEBUG ---
         console.log("--- UPDATE VISUALIZATION ---");
         console.log("Coloring by:", colorKey);
@@ -127,12 +137,12 @@ d3.json("/get_van_gogh_data")
         const xStatsScale = d3.scaleBand().domain(counts.map(d => d.key)).range([0, statsWidth]).padding(0.1);
         const yStatsScale = d3.scaleLinear().domain([0, d3.max(counts, d => d.count) * 1.1]).range([statsHeight, 0]);
         statsSvg.selectAll(".bar").data(counts).enter().append("rect").attr("class", "bar").attr("x", d => xStatsScale(d.key)).attr("y", d => yStatsScale(d.count))
-          .attr("width", xStatsScale.bandwidth()).attr("height", d => statsHeight - yStatsScale(d.count))
-          .attr("fill", d => colorScale(d.key)).style("cursor", "pointer")
-          .on("click", (event, d) => {
-              legendContainer.selectAll("input[type=checkbox]").property("checked", legend_d => legend_d === d.key);
-              filterPoints();
-          });
+            .attr("width", xStatsScale.bandwidth()).attr("height", d => statsHeight - yStatsScale(d.count))
+            .attr("fill", d => colorScale(d.key)).style("cursor", "pointer")
+            .on("click", (event, d) => {
+                legendContainer.selectAll("input[type=checkbox]").property("checked", legend_d => legend_d === d.key);
+                filterPoints();
+            });
         statsSvg.append("g").attr("transform", `translate(0,${statsHeight})`).call(d3.axisBottom(xStatsScale)).selectAll("text").attr("transform", "rotate(-45)").style("text-anchor", "end");
         statsSvg.append("g").call(d3.axisLeft(yStatsScale).ticks(5))
             .append("text")
@@ -153,17 +163,17 @@ d3.json("/get_van_gogh_data")
     // ===================================
     // 3. 事件監聽與輔助函式
     // ===================================
-    
+
     // --- 控制項事件監聽 ---
     // 改用原生 JS 來附加事件，以繞過 D3 可能的 bug
-    document.getElementById("color-scheme-select").addEventListener("change", function() {
+    document.getElementById("color-scheme-select").addEventListener("change", function () {
         console.log("--- DROPDOWN CHANGED (Native JS) ---");
         colorMode = this.value;
         updateVisualization();
     });
-    d3.select("#toggle-stats").on("change", function() { d3.select("#stats-container").style("display", d3.select(this).property("checked") ? "block" : "none"); });
+    d3.select("#toggle-stats").on("change", function () { d3.select("#stats-container").style("display", d3.select(this).property("checked") ? "block" : "none"); });
     d3.select("#toggle-centroids").on("change", filterPoints);
-    d3.select("#search-box").on("input", function() {
+    d3.select("#search-box").on("input", function () {
         const searchTerm = this.value.toLowerCase();
         const colorKey = colorMode;
 
@@ -186,7 +196,7 @@ d3.json("/get_van_gogh_data")
     function filterPoints() {
         const legendContainer = d3.select("#legend-container");
         const checkedValues = [];
-        legendContainer.selectAll("input[type=checkbox]:checked").each(function(d) { checkedValues.push(d); });
+        legendContainer.selectAll("input[type=checkbox]:checked").each(function (d) { checkedValues.push(d); });
         const areCentroidsVisible = d3.select("#toggle-centroids").property("checked");
         const colorKey = colorMode;
 
@@ -197,17 +207,17 @@ d3.json("/get_van_gogh_data")
 
     function zoomed(event) {
         g.attr("transform", event.transform);
-        const {k, x, y} = event.transform;
+        const { k, x, y } = event.transform;
         viewRect.attr("x", (-x / k) * minimapScale).attr("y", (-y / k) * minimapScale)
             .attr("width", (width / k) * minimapScale).attr("height", (height / k) * minimapScale);
     }
 
-    d3.select("#close-popup").on("click", function(event) {
+    d3.select("#close-popup").on("click", function (event) {
         d3.select("#popup").style("display", "none");
         d3.select("#similarity-results-container").html("");
         event.stopPropagation();
     });
-    d3.select("body").on("click", function(event) {
+    d3.select("body").on("click", function (event) {
         const popup = d3.select("#popup").node();
         if (popup.style.display === "block" && !popup.contains(event.target)) {
             d3.select("#popup").style("display", "none");
@@ -215,8 +225,38 @@ d3.json("/get_van_gogh_data")
         }
     });
 
+    // --- 相似度計算函式 ---
+    function getSimilarImages(targetPath) {
+        if (!featureVectors || Object.keys(featureVectors).length === 0) {
+            console.warn("特徵向量尚未載入或為空");
+            return [];
+        }
+
+        const targetVector = featureVectors[targetPath];
+        if (!targetVector) {
+            console.error("找不到目標圖片的特徵向量:", targetPath);
+            return [];
+        }
+
+        const distances = [];
+        for (const path in featureVectors) {
+            const vector = featureVectors[path];
+            // 計算歐幾里得距離
+            let sum = 0;
+            for (let i = 0; i < vector.length; i++) {
+                sum += (targetVector[i] - vector[i]) ** 2;
+            }
+            const dist = Math.sqrt(sum);
+            distances.push({ path, dist });
+        }
+
+        // 按距離排序
+        distances.sort((a, b) => a.dist - b.dist);
+
+        // 取得最相似的 6 個 (包含自己)，然後只回傳圖片路徑
+        return distances.slice(0, 6).map(d => d.path);
+    }
+
     // --- 初始繪製 ---
     updateVisualization();
-
-  })
-  .catch((error) => console.error("Error loading data:", error));
+}
